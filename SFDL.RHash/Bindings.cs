@@ -32,8 +32,21 @@ namespace RHash {
 		private Bindings() { }
 		
 		static Bindings() {
+
+			if (Environment.Is64BitOperatingSystem ==true)
+			{
+				SetDllDirectory(System.IO.Path.Combine(Environment.CurrentDirectory, "lib","lib64"));
+			}
+			else
+			{
+				SetDllDirectory(System.IO.Path.Combine(Environment.CurrentDirectory, "lib","lib32"));
+			};
+		
 			rhash_library_init();
 		}
+
+		[DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+		static extern bool SetDllDirectory(string lpPathName);
 
 		[DllImport (librhash)]
 		public static extern
