@@ -35,11 +35,11 @@ namespace RHash {
 
 			if (Environment.Is64BitOperatingSystem ==true)
 			{
-				SetDllDirectory(System.IO.Path.Combine(Environment.CurrentDirectory, "lib","lib64"));
+				SetDllDirectory(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "lib","lib64"));
 			}
 			else
 			{
-				SetDllDirectory(System.IO.Path.Combine(Environment.CurrentDirectory, "lib","lib32"));
+				SetDllDirectory(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "lib","lib32"));
 			};
 		
 			rhash_library_init();
