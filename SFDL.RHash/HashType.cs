@@ -1,24 +1,24 @@
 /*
  * This file is a part of Java Bindings for Librhash
- * Copyright (c) 2011-2012, 2014, Sergey Basalaev <sbasalaev@gmail.com>
- * Librhash is (c) 2011-2012, Aleksey Kravchenko <rhash.admin@gmail.com>
- * 
- * Permission is hereby granted, free of charge,  to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction,  including without limitation the rights
- * to  use,  copy,  modify,  merge, publish, distribute, sublicense, and/or sell
- * copies  of  the Software,  and  to permit  persons  to whom  the Software  is
- * furnished to do so.
- * 
- * This library  is distributed  in the hope that it will be useful, but WITHOUT
- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
- * FOR A PARTICULAR PURPOSE. Use it at your own risk!
+ *
+ * Copyright (c) 2011, Sergey Basalaev <sbasalaev@gmail.com>
+ *
+ * Permission to use, copy, modify, and/or distribute this software for any
+ * purpose with or without fee is hereby granted.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+ * REGARD TO THIS SOFTWARE  INCLUDING ALL IMPLIED WARRANTIES OF  MERCHANTABILITY
+ * AND FITNESS.  IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+ * INDIRECT,  OR CONSEQUENTIAL DAMAGES  OR ANY DAMAGES WHATSOEVER RESULTING FROM
+ * LOSS OF USE,  DATA OR PROFITS,  WHETHER IN AN ACTION OF CONTRACT,  NEGLIGENCE
+ * OR OTHER TORTIOUS ACTION,  ARISING OUT OF  OR IN CONNECTION  WITH THE USE  OR
+ * PERFORMANCE OF THIS SOFTWARE.
  */
 
 using System;
 
 namespace RHash {
-	
+
 	/*
 	 * Type of hashing algorithm.
 	 * Supported algorithms are MD4, MD5, SHA1/SHA2, Tiger,
@@ -49,14 +49,13 @@ namespace RHash {
 		/* RIPEMD-160 hash. */
 		RIPEMD160 = 1 << 10,
 		/* GOST R 34.11-94. */
-		GOST = 1 << 11,
-		GOST_CRYPTOPRO = 1 << 12,
+		GOST94 = 1 << 11,
+		GOST94_CRYPTOPRO = 1 << 12,
 		/* HAS-160 hash. */
 		HAS160 = 1 << 13,
-		/* Snefru-128 hash. */
-		SNEFRU128 = 1 << 14,
-		/* Snefru-256 hash. */
-		SNEFRU256 = 1 << 15,
+		/* GOST R 34.11-2012. */
+		GOST12_256 = 1 << 14,
+		GOST12_512 = 1 << 15,
 		/* SHA-224 hash. */
 		SHA224 = 1 << 16,
 		/* SHA-256 hash. */
@@ -76,6 +75,12 @@ namespace RHash {
 		/** SHA3-384 hash. */
 		SHA3_384 = 1 << 24,
 		/** SHA3-512 hash. */
-		SHA3_512 = 1 << 25
+		SHA3_512 = 1 << 25,
+		/* CRC32C checksum. */
+		CRC32C = 1 << 26,
+		/* Snefru-128 hash. */
+		SNEFRU128 = 1 << 27,
+		/* Snefru-256 hash. */
+		SNEFRU256 = 1 << 28
 	}
 }
